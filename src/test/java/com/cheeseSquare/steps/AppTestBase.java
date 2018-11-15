@@ -30,7 +30,7 @@ public class AppTestBase extends CommonActions {
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 120);
         service.start();
         driver = new AppiumDriver(service.getUrl(), capabilities);
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @After
