@@ -2,7 +2,7 @@ package com.cheeseSquare.steps;
 
 import com.cheeseSquare.helpers.CommonActions;
 import com.cheeseSquare.screens.HomeScreen;
-import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -20,6 +20,11 @@ public class HomepageSteps extends CommonActions {
     @Then("^I check all the (\\d+) categories of cheese are displayed$")
     public void iCheckAllTheCategoriesOfCheeseAreDisplayed(int categoryValue) throws Throwable {
         homeScreen.checkAllCategoryAreDisplayed(categoryValue);
+    }
+
+    @And("^I check each category have a list of cheese$")
+    public void iCheckEachCategoryHaveAListOfCheese() throws Throwable {
+        homeScreen.isCategoryListLoaded();
     }
 
     @When("^I click on cheese$")
