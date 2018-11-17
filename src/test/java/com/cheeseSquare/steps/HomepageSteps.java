@@ -14,7 +14,7 @@ public class HomepageSteps extends CommonActions {
     @Given("^I am on cheese square app$")
     public void iAmOnCheeseSquareApp() throws Throwable {
         waitForAppToLoad();
-
+        homeScreen.isAppLoaded();
     }
 
     @Then("^I check all the (\\d+) categories of cheese are displayed$")

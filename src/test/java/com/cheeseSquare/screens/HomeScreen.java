@@ -15,6 +15,9 @@ public class HomeScreen extends CommonActions {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
+    @FindBy(id = "toolbar")
+    private AndroidElement toolbar;
+
     @FindBy(xpath = "//android.widget.TextView[@text='CATEGORY 1']")
     private AndroidElement category1;
 
@@ -53,6 +56,11 @@ public class HomeScreen extends CommonActions {
 
     @FindBy(xpath = "(//android.widget.RadioButton)[3]")
     private AndroidElement nightModeRadioButton;
+
+
+    public void isAppLoaded(){
+        Assert.assertTrue("App is not loaded",isElementDisplay(10,toolbar));
+    }
 
     //checking category names are correct and they are visible on app
     public void checkAllCategoryAreDisplayed(int categorySize){
